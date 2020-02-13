@@ -1,4 +1,4 @@
 [build]
 base = "mp-battle/"
 publish = "mp-battle/build/"
-command = "npm run build"
+command = "yarn build"
