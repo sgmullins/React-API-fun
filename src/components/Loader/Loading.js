@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
-
-export default class Loading extends Component {
-  state = {
-    content: 'Loading',
-  };
-  render() {
-    return <p>{this.state.content}</p>;
-  }
+import React from 'react';
+import { SolarSystemLoading } from 'react-loadingg';
+export default function Loading() {
+  return (
+    <SolarSystemLoading classname='loader' color={'yellow'} size={'large'} />
+  );
 }

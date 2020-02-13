@@ -22,11 +22,10 @@ export function fetchPopularClimbStyle(climbCategory) {
       if (!data.routes) {
         throw new Error(data.message);
       }
-      console.log(data);
       return data.routes;
     });
 }
 
-export function fetchPopularClimbsByLocation(location) {
-  const endpoint = `http://www.mountainproject.com/data/`;
-}
+// export function fetchPopularClimbsByLocation(location) {
+//   const endpoint = `http://www.mountainproject.com/data/`;
+// }
