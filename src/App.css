@@ -4,6 +4,7 @@
   --greyFont: #383737;
   --pink: #ff3363;
   --green: #019f90;
+  --white: #dee2eb;
 }
 
 li {
@@ -13,11 +14,25 @@ li {
 ul {
   padding: 0;
 }
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center-text {
+  text-align: center;
+}
+.page-title {
+  font-size: 50px;
+  color: var(--white);
+}
 
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
 .category-button {
   border: none;
@@ -48,13 +63,15 @@ ul {
 }
 .my-top-div img {
   width: 100%;
-  margin-top: 15vh;
+  margin-top: 10vh;
+  border: 3px solid #c6cad1;
+  border-radius: 3px;
 }
 .awesome-div {
   width: 80%;
 }
 
-a.slide {
+.slide {
   cursor: pointer;
   background: linear-gradient(to bottom, var(--green) 0%, var(--green) 100%);
   background-position: 0 100%;
@@ -64,7 +81,164 @@ a.slide {
   transition: background-size 0.2s;
 }
 
-a.slide:hover {
+.slide:hover {
   background-size: 4px 50px;
   color: var(--greyFont);
 }
+
+.BrainhubCarousel__arrows {
+  position: relative;
+  padding: 50px 30px;
+  border: none;
+  overflow: hidden;
+  outline: 0;
+  font-size: 0;
+  line-height: 0;
+  background-color: var(--pink);
+}
+.BrainhubCarousel__arrows:hover:enabled {
+  background-color: var(--green);
+}
+.BrainhubCarousel__arrows span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-color: #c6cad1;
+  border-width: 5px 5px 0 0;
+  padding: 5px;
+  transition: 0.3s;
+  font-size: 0;
+}
+
+.header-lg {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 20px;
+  color: var(--white);
+}
+
+.header-sm {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 15px;
+  color: var(--white);
+}
+.container-sm {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.battle-instructions {
+  padding: 0;
+  font-size: 25px;
+}
+
+.battle-instructions li {
+  flex: 1;
+  min-width: 300px;
+}
+
+.battle-instructions svg {
+  padding: 40px;
+  border-radius: 3px;
+}
+.instruction-container {
+  margin-top: 20vh;
+}
+.battle-icons {
+  color: var(--pink);
+  background: #070b0bd0;
+  border: 3px solid #c6cad1;
+}
+
+.battle-icons :hover {
+  color: var(--green);
+}
+span.slide {
+  cursor: default;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.player {
+  flex: 1;
+  margin: 0 60px;
+  padding: 10px;
+}
+.player-label {
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-inputs input {
+  padding: 8px;
+  font-size: 16px;
+  flex: 2;
+  border-radius: 3px;
+  border: 1px solid var(--white);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.player-inputs ::placeholder {
+  color: var(--white);
+  opacity: 1;
+}
+
+.player-inputs .input {
+  background: #d3cece87;
+  color: var(--white);
+}
+.player-inputs button {
+  flex: 1;
+  margin-left: 10px;
+}
+.btn {
+  padding: 10px;
+  text-decoration: uppercase;
+  letter-spacing: 0.25em;
+  border-radius: 3px;
+  border: 3px solid var(--green);
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 200px;
+  color: var(--green);
+  background: #f2f2f2;
+}
+
+.btn:disabled {
+  background: #f2f2f2;
+  color: #c7c7c7;
+  border: 3px solid #f2f2f2;
+  text-decoration: line-through;
+}
+
+.players-container {
+  margin: 100px 0;
+}
+
+.api-fail {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: bold;
+}
+/* .sc-kPVwWT,
+.DPPzO {
+  margin: auto;
+  top: 30px;
+} */

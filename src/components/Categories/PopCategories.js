@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { fetchPopularClimbStyle } from '../../utils/api';
 import PopCategoriesNavBar from './PopCategoriesNavBar';
-// import MyCarousel from '../Carousel/CarouselImage';
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+import ImageCarousel from '../Carousel/ImageCarousel';
+import { SolarSystemLoading } from 'react-loadingg';
 // import AwesomeSlider from 'react-awesome-slider';
 // import AwsSliderStyles from 'react-awesome-slider/src/styles.js';
 // import Captioned from 'react-awesome-slider/src/components/captioned';
@@ -56,15 +55,25 @@ export default class PopCategories extends React.Component {
 
     return (
       <React.Fragment>
+        <h1 className='center-text page-title'>
+          <span className='slide'>Top Routes From Mountain Project</span>
+        </h1>
         <PopCategoriesNavBar
           selected={selectedCategory}
           onUpdateCategory={this.updateCategory}
         />
-        {this.isLoading() && <p>Loading</p>}
+        {this.isLoading() && (
+          <SolarSystemLoading
+            classname='loader'
+            color={'yellow'}
+            size={'large'}
+          />
+        )}
 
         {error && <p>{error}</p>}
         {routes[selectedCategory] && (
-          <MyCarousel routes={routes[selectedCategory]} />
+          <ImageCarousel routes={routes[selectedCategory]} />
+          // <MyCarousel routes={routes[selectedCategory]} />
           // <Slider routes={routes[selectedCategory]} />
         )}
       </React.Fragment>
@@ -77,33 +86,33 @@ PopCategoriesNavBar.propTypes = {
   onUpdateCategory: PropTypes.func.isRequired,
 };
 
-function MyCarousel({ routes }) {
-  return (
-    <Carousel arrows centered infinite slidesPerPage={2}>
-      {routes.map((route, index) => {
-        const { name, rating, stars, url, imgMedium, location } = route;
-        return (
-          <div className='my-top-div' key={url}>
-            <img src={imgMedium} alt={url} />;
-            <div className='climb-info'>
-              <h2>
-                <a href={url} className='slide'>
-                  {name}
-                </a>
-              </h2>
-              <h3>
-                {location[1]}, {location[0]}
-              </h3>
-              <h3>{rating}</h3>
-              <small>Mountain Project Rating: {stars}</small>
-            </div>
-          </div>
-        );
-      })}
-      {/* <pre>{JSON.stringify(routes, null, 2)}</pre> */}
-    </Carousel>
-  );
-}
+// function MyCarousel({ routes }) {
+//   return (
+//     <Carousel arrows centered infinite slidesPerPage={2}>
+//       {routes.map((route, index) => {
+//         const { name, rating, stars, url, imgMedium, location } = route;
+//         return (
+//           <div className='my-top-div' key={url}>
+//             <img src={imgMedium} alt={url} />;
+//             <div className='climb-info'>
+//               <h2>
+//                 <a href={url} className='slide'>
+//                   {name}
+//                 </a>
+//               </h2>
+//               <h3>
+//                 {location[1]}, {location[0]}
+//               </h3>
+//               <h3>{rating}</h3>
+//               <small>Mountain Project Rating: {stars}</small>
+//             </div>
+//           </div>
+//         );
+//       })}
+//       {/* <pre>{JSON.stringify(routes, null, 2)}</pre> */}
+//     </Carousel>
+//   );
+// }
 
 // const Slider = ({ routes }) => {
 //   return (

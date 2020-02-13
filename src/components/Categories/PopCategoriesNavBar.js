@@ -12,7 +12,7 @@ export default function CategoryNav({ selected, onUpdateCategory }) {
             style={
               category === selected
                 ? { color: '#ff3363', outlineColor: '#ff3363' }
-                : { color: '#c5cad1' }
+                : { color: '#e6ebf2' }
             }
             onClick={() => onUpdateCategory(category)}
           >
