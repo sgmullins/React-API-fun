@@ -1,3 +1,0 @@
-[build]
-publish = "mp-battle/build/"
-command = "yarn build"
